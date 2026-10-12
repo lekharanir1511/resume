@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekha Rani R - Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 30px;
+            color: #222;
+        }
+        .resume {
+            width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 30px 40px;
+    }
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+}
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .profile img {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid black;
+        }
+        .name h1 {
+            margin: 0;
+            font-size: 30px;
+            color:black;
+            letter-spacing: 1px;
+        }
+        .name p {
+            margin-top: 6px;
+            font-size: 14px;
+            color: #666;
+        }
+        .contact {
+            text-align: right;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+        .contact a {
+            color:black;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-top: 18px;
+        }
+        .section-title {
+            color:black;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid black;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .section p {
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 5px 0;
+        }
+        .education-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .education-table th {
+            background-color:black;
+            color:white;
+            padding: 9px;
+            text-align: left;
+            border: 1px solid black;
+        }
+        .education-table td {
+            padding: 9px;
+            border: 1px solid black;
+            vertical-align: top;
+        }
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        li {
+            font-size: 13px;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+        .skills li::marker {
+            color:black;
+        }
+        .internship {
+            display: grid;
+            grid-template-columns: 130px 1fr 100px;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+        .internship-title {
+            font-weight: bold;
+        }
+        .date {
+            text-align: right;
+
+            color: black;
+        }
+        .project-list {
+            padding-left: 20px;
+        }
+        .certifications {
+            padding-left: 20px;
+        }
+        .certifications li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="resume">
+    <div class="header">
+        <div class="profile">
+            <img src="lekharani.png" alt="Lekha Rani Photo">
+            <div class="name">
+                <h1>LEKHA RANI R</h1>
+            </div>
+        </div>
+        <div class="contact">
+            <div>9087634555</div>
+            <div>lekharajm@gmail.com</div>
+            <div>
+                <a href="www.linkedin.com/in/lekha-rani-r-1897082a5" target="www.linkedin.com/in/lekha-rani-r-1897082a5">
+                    www.linkedin.com/in/lekha-rani-r-1897082a5
+                </a>
+            </div>
+            <div>
+                <a href="https://github.com/lekharanir1511" target="https://github.com/lekharanir1511">
+                    https://github.com/lekharanir1511
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title">
+            Summary
+        </div>
+        <p>A self-motivated and detail-oriented individual with strong skills
+            in UI/UX design and a solid foundation in web development.
+            Proficient in HTML, CSS, and JavaScript, along with basic knowledge
+            of Python, C, and Java.</p>
+    </div>
+    <div class="section">
+        <div class="section-title">
+            Education
+        </div>
+        <table class="education-table">
+            <tr>
+                <th>Qualification</th>
+                <th>Institution</th>
+                <th>Year</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <b>Bachelor of Engineering</b><br>
+                    Computer Science
+                </td>
+                <td>
+                    S.A. Engineering College
+                </td>
+                <td>
+                    2023 - 2027
+                </td>
+                <td>
+                    CGPA: 9.29
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <b>Higher Secondary Education</b><br>
+                HSLC
+            </td>
+            <td>
+                C.S.I. Bain School
+           </td>
+            <td>
+                    2021 - 2023
+            </td>
+            <td>
+                Percentage: 81%
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <b>SSLC</b>
+            </td>
+            <td>
+                C.S.I. Bain School
+            </td>
+            <td>
+                2009 - 2021
+            </td>
+            <td>
+                Secondary Education
+            </td>
+            </tr>
+        </table>
+    </div>
+    <div class="section">
+        <div class="section-title">
+            Technical Skills
+        </div>
+        <ul class="skills">
+            <li>
+                <b>Frontend Technologies:</b>
+                HTML, CSS, React
+            </li>
+            <li>
+                <b>Backend & Programming Languages:</b>
+                JavaScript, Java (Basics), C (Basics), Python (Basics)
+            </li>
+            <li>
+                <b>Design & Prototyping Tools:</b>
+                Canva, WordPress, Figma
+            </li>
+        </ul>
+    </div>
+    <div class="section">
+        <div class="section-title">
+            Internship
+        </div>
+        <div class="internship">
+            <div class="internship-title">
+                WordPress & Figma
+                <br>
+                Detqel
+            </div>
+            <div>
+                Completed a UI/UX Design internship at Detqel,
+                gaining hands-on experience
+            </div>
+            <div class="date">
+                Jun - July 2025
+            </div>
+        </div>
+        <div class="internship">
+            <div class="internship-title">
+                Full Stack Development - Java
+            </div>
+            <div>
+                Completed a Full Stack Java Development project,
+                gaining hands-on experience.
+            </div>
+            <div class="date">
+                May - June 2026
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title">
+            Project
+        </div>
+        <ul class="project-list">
+            <li>
+                Designed and developed an online ticket booking
+                website using HTML, CSS and JavaScript.
+            </li>
+            <li>
+                Developed an Online Tourist website using
+                WordPress and Figma.
+            </li>
+            <li>
+             Designed a MERN Stack Project on Learning
+              Management System.
+            </li>
+            <li>
+                Developed <b>RoomEase</b>, a Full Stack Hotel Room
+                Booking Management System using React, Java
+                Spring Boot and MySQL.
+            </li>
+        </ul>
+    </div>
+    <div class="section">
+        <div class="section-title">
+            Certification
+        </div>
+        <ul class="certifications">
+            <li>
+                Front End Web Developer Certification
+                in Infosys Springboard
+            </li>
+            <li>
+                Online Internship Certification for
+                UI/UX Design in WordPress and Figma
+            </li>
+            <li>
+                Certificate for completing AI AWS Academy Graduate -
+                AWS Academy Cloud Foundations
+            </li>
+            <li>
+                Mendix Rapid Developer Certification
+            </li>
+            <li>
+                Cyber Security Foundation Certification
+                in Infosys Springboard
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
