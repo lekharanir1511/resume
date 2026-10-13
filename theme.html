@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekha Rani R - Resume</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        :root {
+            --background: #111827;
+            --resume-bg: #07090c;
+            --text: #f9fafb;
+            --muted: #d1d5db;
+            --border: #6b7280;
+            --table-head: #374151;
+            --button-bg: #f9fafb;
+            --button-text: #111827;
+        }
+        body.light-theme {
+            --background: #f3f4f6;
+            --resume-bg: #ffffff;
+            --text: #222222;
+            --muted: #666666;
+            --border: #222222;
+            --table-head: #222222;
+            --button-bg: #222222;
+            --button-text: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 30px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .controls {
+            max-width: 880px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .controls button {
+            background: var(--button-bg);
+            color: var(--button-text);
+            border: 1px solid var(--border);
+            padding: 11px 16px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+       
+        .download-info {
+            text-align: center;
+            margin: 0 auto 18px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+        .resume {
+            max-width: 880px;
+            width: 100%;
+            margin: auto;
+            background: var(--resume-bg);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile img {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--text);
+            cursor: pointer;
+        }
+        .profile img:hover {
+            opacity: 0.8;
+        }
+        .profile img[hidden] {
+            display: none;
+        }
+        .name h1 {
+            margin: 0;
+            font-size: 30px;
+            color: var(--text);
+            letter-spacing: 1px;
+        }
+        .contact {
+            text-align: right;
+            font-size: 12px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+        .contact a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-top: 22px;
+        }
+        .section-title {
+            color: var(--text);
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+        }
+        .section p {
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+        .education-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .education-table th {
+            background: var(--table-head);
+            color: white;
+            padding: 9px;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+        .education-table td {
+            padding: 9px;
+            border: 1px solid var(--border);
+            vertical-align: top;
+        }
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        li {
+            font-size: 13px;
+            margin-bottom: 7px;
+            line-height: 1.5;
+        }
+        .internship {
+            display: grid;
+            grid-template-columns: 150px 1fr 115px;
+            gap: 12px;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+        .internship-title {
+            font-weight: bold;
+        }
+        .date {
+            text-align: right;
+            color: var(--text);
+        }
+        @media (max-width: 650px) {
+            body {
+                padding: 12px;
+            }
+            .resume {
+                padding: 20px 15px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile {
+                flex-wrap: wrap;
+            }
+
+            .name h1 {
+                font-size: 23px;
+            }
+
+            .contact {
+                text-align: left;
+            }
+
+            .education-table {
+                font-size: 11px;
+            }
+
+            .education-table th,
+            .education-table td {
+                padding: 5px;
+                overflow-wrap: anywhere;
+            }
+
+            .internship {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .date {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button id="photoButton" type="button">Show Photo</button>
+        <button id="themeButton" type="button">
+            Change to Light Theme
+        </button>
+        <button id="downloadButton" type="button">
+            Download Resume
+        </button>
+    </div>
+    <div class="download-info">
+        Downloads:
+        <strong id="downloadCount">0</strong>
+    </div>
+    <div class="resume" id="resume">
+        <div class="header">
+            <div class="profile">
+                <img id="profilePhoto"src="lekharani.png"alt="Lekha Rani Photo"title="Click the photo to hide it" hidden>
+                <div class="name">
+                    <h1>LEKHA RANI R</h1>
+                </div>
+            </div>
+
+            <div class="contact">
+                <div>9087634555</div>
+                <div>lekharajm@gmail.com</div>
+                <div>
+                    <a href="https://www.linkedin.com/in/lekha-rani-r-1897082a5"
+                       target="_blank" rel="noopener noreferrer">
+                        LinkedIn
+                    </a>
+                </div>
+                <div>
+                    <a href="https://github.com/lekharanir1511"
+                       target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Summary</div>
+            <p>
+                A self-motivated and detail-oriented individual with strong
+                skills in UI/UX design and a solid foundation in web
+                development. Proficient in HTML, CSS, and JavaScript, along
+                with basic knowledge of Python, C, and Java.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Education</div>
+
+            <table class="education-table">
+                <tr>
+                    <th>Qualification</th>
+                    <th>Institution</th>
+                    <th>Year</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><b>Bachelor of Engineering</b><br>Computer Science</td>
+                    <td>S.A. Engineering College</td>
+                    <td>2023 - 2027</td>
+                    <td>CGPA: 9.29</td>
+                </tr>
+                <tr>
+                    <td><b>Higher Secondary Education</b><br>HSC</td>
+                    <td>C.S.I. Bain School</td>
+                    <td>2021 - 2023</td>
+                    <td>Percentage: 81%</td>
+                </tr>
+                <tr>
+                    <td><b>SSLC</b></td>
+                    <td>C.S.I. Bain School</td>
+                    <td>2020 - 2021</td>
+                    <td>Pass</td>
+                </tr>
+            </table>
+        </div>
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <ul>
+                <li><b>Frontend Technologies:</b> HTML, CSS, React</li>
+                <li>
+                    <b>Backend & Programming Languages:</b>
+                    JavaScript, Java (Basics), C (Basics), Python (Basics)
+                </li>
+                <li>
+                    <b>Design & Prototyping Tools:</b>
+                    Canva, WordPress, Figma
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-title">Internship</div>
+
+            <div class="internship">
+                <div class="internship-title">
+                    WordPress & Figma<br>Detqel
+                </div>
+                <div>
+                    Completed a UI/UX Design internship at Detqel,
+                    gaining hands-on experience.
+                </div>
+                <div class="date">Jun - July 2025</div>
+            </div>
+            <div class="internship">
+                <div class="internship-title">
+                    Full Stack Development - Java
+                </div>
+                <div>
+                    Completed a Full Stack Java Development project,
+                    gaining hands-on experience.
+                </div>
+                <div class="date">May - June 2026</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Project</div>
+            <ul>
+                <li>
+                    Designed and developed an online ticket booking
+                    website using HTML, CSS and JavaScript.
+                </li>
+                <li>
+                    Developed an Online Tourist website using
+                    WordPress and Figma.
+                </li>
+                <li>
+                    Designed a MERN Stack Project on Learning
+                    Management System.
+                </li>
+                <li>
+                    Developed a Full Stack Hotel Room
+                    Booking Management System using React, Java
+                    Spring Boot and MySQL.
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-title">Certification</div>
+            <ul>
+                <li>
+                    Front End Web Developer Certification in
+                    Infosys Springboard.
+                </li>
+                <li>
+                    Online Internship Certification for UI/UX Design
+                    in WordPress and Figma.
+                </li>
+                <li>
+                    AWS Academy Graduate - AWS Academy Cloud Foundations.
+                </li>
+                <li>Mendix Rapid Developer Certification.</li>
+                <li>
+                    Cyber Security Foundation Certification in
+                    Infosys Springboard.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+
+        const photoButton = document.getElementById("photoButton");
+        const profilePhoto = document.getElementById("profilePhoto");
+
+        photoButton.addEventListener("click", function () {
+            profilePhoto.hidden = !profilePhoto.hidden;
+
+            photoButton.textContent = profilePhoto.hidden
+                ? "Show Photo"
+                : "Hide Photo";
+        });
+        profilePhoto.addEventListener("click", function () {
+            profilePhoto.hidden = true;
+            photoButton.textContent = "Show Photo";
+        });
+        const themeButton = document.getElementById("themeButton");
+        themeButton.addEventListener("click", function () {
+            document.body.classList.toggle("light-theme");
+            const isLight =
+                document.body.classList.contains("light-theme");
+
+            themeButton.textContent = isLight
+                ? "Change to Dark Theme"
+                : "Change to Light Theme";
+        });
+        const downloadCountElement =
+            document.getElementById("downloadCount");
+        let downloadCount = 0;
+        try {
+            downloadCount =
+                Number(localStorage.getItem("resumeDownloadCount")) || 0;
+        } catch (error) {
+            downloadCount = 0;
+        }
+
+        downloadCountElement.textContent = downloadCount;
+        const downloadButton =
+            document.getElementById("downloadButton");
+        downloadButton.addEventListener("click", function () {
+            downloadCount++;
+            downloadCountElement.textContent = downloadCount;
+            try {
+                localStorage.setItem(
+                    "resumeDownloadCount",
+                    downloadCount
+                );
+            } catch (error) {
+                console.log("Unable to save the download count.");
+            }
+            const downloadedDocument =
+                document.documentElement.cloneNode(true);
+
+            downloadedDocument.querySelector(".controls")?.remove();
+            downloadedDocument.querySelector(".download-info")?.remove();
+            const downloadedPhoto =
+                downloadedDocument.querySelector("#profilePhoto");
+            if (downloadedPhoto) {
+                downloadedPhoto.hidden = false;
+            }
+            downloadedDocument.querySelector("body")
+                .classList.add("light-theme");
+
+            const finishDownload = function (html) {
+                const blob = new Blob(
+                    [html],
+                    { type: "text/html;charset=utf-8" }
+                );
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement("a");
+
+                link.href = url;
+                link.download = "Lekha_Rani_Resume.html";
+
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+
+                setTimeout(function () {
+                    URL.revokeObjectURL(url);
+                }, 1000);
+            };
+            fetch("lekharani.png")
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error("Photo could not be loaded");
+                    }
+                    return response.blob();
+                })
+                .then(function (photoBlob) {
+                    const reader = new FileReader();
+                    reader.onload = function () {
+                        const photo =
+                            downloadedDocument.querySelector("#profilePhoto");
+                        photo.src = reader.result;
+                        finishDownload(
+                            "<!DOCTYPE html>\n" +
+                            downloadedDocument.outerHTML
+                        );
+                    };
+                    reader.onerror = function () {
+                        finishDownload(
+                            "<!DOCTYPE html>\n" +
+                            downloadedDocument.outerHTML
+                        );
+                    };
+                    reader.readAsDataURL(photoBlob);
+                })
+                .catch(function () {
+                    finishDownload(
+                        "<!DOCTYPE html>\n" +
+                        downloadedDocument.outerHTML
+                    );
+                });
+        });
+    </script>
+</body>
+</html>

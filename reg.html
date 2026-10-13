@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf2f8;
+            margin: 0;
+            padding: 30px;
+        }
+        .container {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .gender input {
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #217dbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Registration</h2>
+        <form>
+            <label>Name:</label>
+            <input type="text" name="name"required>
+            <label>Email:</label>
+            <input type="email" name="email"required>
+            <label>Gender:</label>
+            <div class="gender">
+                <input type="radio" name="gender" value="Male" required> Male
+                <input type="radio" name="gender" value="Female"> Female
+                <input type="radio" name="gender" value="Other"> Other
+            </div>
+            <label>Date of Birth:</label>
+            <input type="date" name="dob" required>
+            <label>Address:</label>
+            <textarea name="address" rows="3"required></textarea>
+            <label>Mobile Number:</label>
+            <input type="tel" name="mobile"
+                   pattern="[0-9]{10}" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
